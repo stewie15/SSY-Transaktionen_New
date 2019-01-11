@@ -11,14 +11,14 @@ class Helper {
 
     updateRenter(carNr, renter, message) {
         Request.patch({
-            url: 'http://localhost:3000/cars/' + carNr + '/renter',
+            url: 'http://127.0.0.1:3000/cars/' + carNr + '/renter',
             json: { renter: renter }
         }, this.showResponse(message));
     }
 
     updateInvoice(invoiceNr, invoice, message) {
         Request.put({
-            url: 'http://localhost:3000/invoices/' + invoiceNr,
+            url: 'http://127.0.0.1:3000/invoices/' + invoiceNr,
             json: invoice
         }, this.showResponse(message));
     }
@@ -30,14 +30,14 @@ class Helper {
 
     showCar(carNr, message) {
         Request.get({
-            url: 'http://localhost:3000/cars/' + carNr,
+            url: 'http://127.0.0.1:3000/cars/' + carNr,
             json: true
         }, this.showResponse(message));
     }
 
     showInvoice(invoiceNr, message) {
         Request.get({
-            url: 'http://localhost:3000/invoices/' + invoiceNr,
+            url: 'http://127.0.0.1:3000/invoices/' + invoiceNr,
             json: true
         }, this.showResponse(message));
     }
