@@ -33,6 +33,7 @@ function getCar(request, response) {
 function updateRenter(request, response) {
     let car = carCollection.get(request.params.carNr);
     car.setRenter(request.body.renter);
+    carCollection.update(car);
 
     response.json(car);
 }

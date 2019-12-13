@@ -31,6 +31,7 @@ function getInvoice(request, response) {
 function updateInvoice(request, response) {
     let invoice = invoiceCollection.get(request.params.invoiceNr);
     invoice.update(request.body);
+    invoiceCollection.update(invoice);
 
     response.json(invoice);
 }
